@@ -1,5 +1,5 @@
 public class Mario {
-    int height;
+    private int height;
 
     public void setHeight(int height){
         if(height <= 0 || height > 10){

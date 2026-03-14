@@ -12,6 +12,7 @@ public class Main {
                 money.setCash(scan.nextInt());
             }
 
+            money.count();
 
     }
 

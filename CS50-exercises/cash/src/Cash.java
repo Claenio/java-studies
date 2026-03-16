@@ -4,7 +4,6 @@ public class Cash {
     private int m05 = 5;
     private int m01 = 1;
     private int cash;
-    private int counter;
 
 
     public int getCash() {
@@ -12,13 +11,15 @@ public class Cash {
     }
 
     public void setCash(int cash){
-        this.cash = cash;
         if (cash <= 0){
             System.out.println("Invalid value");
+        } else {
+            this.cash = cash;
         }
     }
 
     public void count(){
+        int counter = 0;
         while (cash >= m25){
             cash -= m25;
             counter++;

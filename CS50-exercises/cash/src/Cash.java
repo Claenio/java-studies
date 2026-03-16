@@ -1,8 +1,5 @@
 public class Cash {
-    private int m25 = 25;
-    private int m10 = 10;
-    private int m05 = 5;
-    private int m01 = 1;
+    private int[] coins = {25, 10, 5, 1};
     private int cash;
 
 
@@ -18,22 +15,19 @@ public class Cash {
         }
     }
 
-    public void count(){
+    public void count() {
         int counter = 0;
-        while (cash >= m25){
-            cash -= m25;
-            counter++;
-        } while (cash >= m10) {
-            cash -= m10;
-            counter++;
-        } while (cash >= m05){
-            cash -= m05;
-            counter++;
-        } while (cash >= m01){
-            cash -= m01;
-            counter++;
+        for (int coin : coins) {
+            int coinCount = 0;
+            while (cash >= coin) {
+                cash -= coin;
+                counter++;
+                coinCount++;
+            }
+            if(coinCount > 0){
+                System.out.println("Used " + coinCount + " $0." + coin + " coin");
+            }
         }
-        System.out.println("Cash: " + cash);
-        System.out.println("Counter: " + counter);
+        System.out.println("Used " + counter + " coins");
     }
 }

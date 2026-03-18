@@ -12,6 +12,10 @@ public void setCardNumber(long cardNumber){
 
 public void cardValidation(){
     this.tempCard = this.cardNumber;
+    this.sumN = 0;
+    this.sumMult = 0;
+    this.position = 1;
+    this.count = 0;
     while (tempCard > 0){
         int lastDigit = (int) (tempCard % 10);
 
@@ -39,9 +43,9 @@ public void cardValidation(){
         if (count == 15 && (firstDigits == 34 || firstDigits == 37)){
             System.out.println("AMEX");
         } else if (count == 16 && (firstDigits >= 51 && firstDigits <= 55)){
-            System.out.println("Mastercard");
+            System.out.println("MASTERCARD");
         } else if (firstDigit == 4 && (count == 13 || count == 16)){
-            System.out.println("Visa");
+            System.out.println("VISA");
         } else {
             System.out.println("Invalid!");
         }

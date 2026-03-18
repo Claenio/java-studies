@@ -7,7 +7,7 @@ public static void main(String[] args) {
     boolean loop = true;
 
     do {
-        System.out.print("Welcome to the credit card verification tool.\nEnter  an card number (or press 0 to leave): ");
+        System.out.print("Enter  an card number (or press 0 to leave): ");
         long input = scan.nextLong();
 
         if (input == 0){

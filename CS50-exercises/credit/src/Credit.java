@@ -1,9 +1,10 @@
 public class Credit {
-    long cardNumber = 4003600000000014L;
+    long cardNumber = 4222222222222L;
     long tempCard = cardNumber;
     int sumN;
     int sumMult;
     int position = 1;
+    int count = 0;
 
     public void cardValidation(){
         while (tempCard > 0){
@@ -21,7 +22,20 @@ public class Credit {
         }
         int totalSum = sumN + sumMult;
         if (totalSum % 10 == 0){
-            System.out.println("Valid credit card");
+            long newCardValidation = cardNumber;
+            long firstDigits = cardNumber;
+            while (newCardValidation > 0){
+                newCardValidation /= 10;
+                count++;
+            }
+            while (firstDigits < 100){
+                firstDigits /= 10;
+            }
+            long firstOneDigit =  firstDigits / 10;
+
+            if ()
+
+
         } else {
             System.out.println("Invalid credit card");
         }

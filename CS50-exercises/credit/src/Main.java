@@ -7,10 +7,15 @@ public static void main(String[] args) {
     boolean loop = true;
 
     do {
-        System.out.print("Digit an card number: ");
-        card.setCardNumber(scan.nextLong());
-        card.cardValidation();
+        System.out.print("Welcome to the credit card verification tool.\nEnter  an card number (or press 0 to leave): ");
+        long input = scan.nextLong();
 
+        if (input == 0){
+            loop = false;
+        } else {
+            card.setCardNumber(input);
+            card.cardValidation();
+        }
 
     } while (loop);
 }

@@ -1,43 +1,55 @@
 public class Credit {
-    long cardNumber = 4222222222222L;
-    long tempCard = cardNumber;
-    int sumN;
-    int sumMult;
-    int position = 1;
-    int count = 0;
+private long cardNumber;
+private long tempCard;
+private int sumN;
+private int sumMult;
+private int position = 1;
+private int count = 0;
 
-    public void cardValidation(){
-        while (tempCard > 0){
-            int lastDigit = (int) (tempCard % 10);
+public void setCardNumber(long cardNumber){
+    this.cardNumber = cardNumber;
+}
 
-            if (position % 2 == 1) {
-                sumN += lastDigit;
-            } else {
-                int multiplied = lastDigit * 2;
-                sumMult += (multiplied % 10) + (multiplied / 10);
-            }
-            tempCard /= 10;
-            position++;
+public void cardValidation(){
+    this.tempCard = this.cardNumber;
+    while (tempCard > 0){
+        int lastDigit = (int) (tempCard % 10);
 
-        }
-        int totalSum = sumN + sumMult;
-        if (totalSum % 10 == 0){
-            long newCardValidation = cardNumber;
-            long firstDigits = cardNumber;
-            while (newCardValidation > 0){
-                newCardValidation /= 10;
-                count++;
-            }
-            while (firstDigits < 100){
-                firstDigits /= 10;
-            }
-            long firstOneDigit =  firstDigits / 10;
-
-            if ()
-
-
+        if (position % 2 == 1) {
+            sumN += lastDigit;
         } else {
-            System.out.println("Invalid credit card");
+            int multiplied = lastDigit * 2;
+            sumMult += (multiplied % 10) + (multiplied / 10);
         }
+        tempCard /= 10;
+        position++;
+        count++;
+
     }
+    int totalSum = sumN + sumMult;
+
+    if (totalSum % 10 == 0){
+        long firstDigits = cardNumber;
+
+        while (firstDigits >= 100) {
+            firstDigits /= 10;
+        }
+        long firstDigit = firstDigits / 10;
+
+        if (count == 15 && (firstDigits == 34 || firstDigits == 37)){
+            System.out.println("AMEX");
+        } else if (count == 16 && (firstDigits >= 51 && firstDigits <= 55)){
+            System.out.println("Mastercard");
+        } else if (firstDigit == 4 && (count == 13 || count == 16)){
+            System.out.println("Visa");
+        } else {
+            System.out.println("Invalid!");
+        }
+
+
+
+    } else {
+        System.out.println("Invalid credit card");
+    }
+}
 }

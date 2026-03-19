@@ -4,8 +4,7 @@ public class Population {
     private int years = 0;
 
     public void setStartSizePopulation(int startSizePopulation) {
-            this.startSizePopulation = startSizePopulation;
-        }
+        this.startSizePopulation = startSizePopulation;
 
     }
     public void setEndSizePopulation(int endSizePopulation) {

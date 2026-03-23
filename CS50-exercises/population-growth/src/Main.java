@@ -15,6 +15,7 @@ public class Main {
         } while (population.getEndSizePopulation() <= population.getStartSizePopulation());
 
         population.calculateYears();
+        System.out.println("Population after calculation: " + population.calculateYears());
 
 
 

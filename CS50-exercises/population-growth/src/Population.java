@@ -17,11 +17,12 @@ public class Population {
         return endSizePopulation;
     }
 
-    public void calculateYears(){
+    public int calculateYears(){
         while (startSizePopulation < endSizePopulation) {
             startSizePopulation = startSizePopulation + (startSizePopulation / 3) - (startSizePopulation / 4);
             years++;
         }
-        System.out.println("Years: " + years);
+        return years;
     }
+
 }

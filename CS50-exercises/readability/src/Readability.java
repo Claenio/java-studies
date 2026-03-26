@@ -19,8 +19,6 @@ public class Readability {
                 words++;
             }else if(asciiLetter == '.' || asciiLetter == '!' || asciiLetter == '?'){
                 sentences++;
-            }else {
-                letters += 0;
             }
         }
     }

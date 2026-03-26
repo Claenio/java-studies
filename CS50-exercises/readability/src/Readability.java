@@ -10,6 +10,7 @@ public class Readability {
 
     public void calculate(){
         this.letters = 0;
+        this.sentences = 0;
         this.words = 1;
         for (int i = 0; i < textArray.length; i++){
             int asciiLetter = textArray[i];

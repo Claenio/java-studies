@@ -9,7 +9,10 @@ public class Main {
         read.setText(scan.nextLine());
 
         read.calculate();
+        read.getIndex();
         read.printGrade();
+
+        scan.close();
 
     }
 }

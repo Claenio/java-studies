@@ -1,27 +1,29 @@
-public class Caesar {
-    int key = 2;
-    String text = "Hello!";
-    char[] textArray = text.toCharArray();
+public class Caesar{
 
-    public String Encypher(){
-        int textArrayCode = 0;
-        for (int i = 0; i < textArray.length; i++) {
-            if (Character.isLetter(textArray[i])) {
-                textArrayCode = (int)textArray[i];
-                textArray[i] = (char)(textArrayCode + key);
-                //System.out.println(textArray[i]);
+    public String encrypt(String text, int key){
+        char[] result = new char[text.length()];
+        for (int i = 0; i < text.length(); i++){
+            char letter = text.charAt(i);
+
+            if (Character.isLetter(letter)){
+                char base = Character.isUpperCase(letter) ? 'A' : 'a';
+
+                int position = (letter - base + key) % 26;
+                if (position < 0) {
+                    position += 26;
+                }
+                result[i] = (char) (base + position);
+            } else {
+                result[i] = letter;
             }
+
         }
-        //System.out.println(textArray);
-        String str = new String(textArray);
-        return str;
+        return new String(result);
     }
-    public void Decypher(){
-        for (int i = 0; i < textArray.length; i++) {
-            int textArrayCode = textArray[i] - key;
-            textArray[i] = (char)textArrayCode;
-        }
-        System.out.println(textArray);
+
+    public String decrypt(String encryptedText, int key){
+        return encrypt(encryptedText, - key);
     }
+
 
 }

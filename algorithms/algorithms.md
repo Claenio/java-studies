@@ -10,7 +10,16 @@ Big O notation is used to classify algorithms according to how their time or spa
 * Space complexity = Is the amount of memory an algorithm uses as the input size grows.
 ### Complexity types
 * **Constant - O(1)**: Regardless of the input size, the algorithm’s execution time remains constant, the same. Like Acess a first element of a list.
-* **Logarithm - O(log n)**: 
+* **Logarithm - O(log n)**: This type of growth occurs when the problem size is reduced by half at each step, resulting in logarithmic time complexity.
+* **Linear - O(n)**: The runtime grows proportionally to the number of items. If there are 10 items, it takes 10 steps; if there are 100 items, it takes 100 steps.
+* **linearithmic - O(n log n)**: It is the gold standard for efficient sorting algorithms. It is slightly slower than linear time, but still very efficient.
+* **Quadratic - O(n²)**: In quadratic time, the number of operations grows proportionally to n².
+  If there are 10 items, it may take about 100 steps; if there are 100 items, it may take about 10,000 steps.
+* **Exponential - O(2^n)**: Each time a new element is added to the set, the runtime doubles.
+Ex: n = 1 -> 2 steps; n = 2 -> 4 steps; n = 3 -> 8 steps...
+* **Factorial O(n!)**: The runtime grows factorially with the input size.
+Ex: n = 3 -> 6 steps; n = 4 -> 24 steps; n = 5 -> 120 steps...
+---
 
  * ### Linear search algorithm - Complexity O(n)
     The linear search algorithm is a search algorithm that finds a specific value in a list checking each element one by one.

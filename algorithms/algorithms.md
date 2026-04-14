@@ -22,8 +22,8 @@ Ex: n = 3 -> 6 steps; n = 4 -> 24 steps; n = 5 -> 120 steps...
 ---
 
  * ### Linear search algorithm - Complexity O(n)
-    The linear search algorithm is a search algorithm that finds a specific value in a list checking each element one by one.
-    An example is:
+ The linear search algorithm is a search algorithm that finds a specific value in a list checking each element one by one.
+ An example is:
  ```
     int[] array = {2, 5, 0, 8, 4, 5, 1};
     int number = 1;
@@ -35,7 +35,8 @@ Ex: n = 3 -> 6 steps; n = 4 -> 24 steps; n = 5 -> 120 steps...
    ```
     
    * ### Bubble sort - Complexity O(n²)
-
+Bubble Sort repeatedly scans the list, compares adjacent elements, and swaps them when needed, so that larger values gradually move to the end.
+Example:
 ```
     int[] array = {5, 2, 9, 1, 4, 6, 0, 7};
     for (int i = 0; i < array.length; i++) {
@@ -56,7 +57,7 @@ Ex: n = 3 -> 6 steps; n = 4 -> 24 steps; n = 5 -> 120 steps...
 ```
 
 * ### Selection sort - Complexity O(n²)
-
+Selection Sort repeatedly selects the smallest element from the unsorted part of the list and swaps it with the current position.
 ```
     int[] array = {7, 2, 5, 3, 1, 0};
 

@@ -16,8 +16,8 @@ public class SelectionSort {
             int tempNumber = array[i];
             array[i] = array[minNumberIndex];
             array[minNumberIndex] = tempNumber;
-            System.out.println(Arrays.toString(array));
         }
+        System.out.println(Arrays.toString(array));
 
     }
 }

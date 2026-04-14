@@ -36,23 +36,25 @@ Ex: n = 3 -> 6 steps; n = 4 -> 24 steps; n = 5 -> 120 steps...
    * ### Bubble sort - Complexity O(n²)
 
 ```
-int[] array = {5, 2, 9, 1, 4, 6, 0, 7};
-for (int i = 0; i < array.length; i++) {
-    boolean control = true;
-    for (int j = 0; j < array.length - 1 - i; j++) {
-        if (array[j] > array[j + 1]) {
-        int temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
-        control = false;
+    int[] array = {5, 2, 9, 1, 4, 6, 0, 7};
+    for (int i = 0; i < array.length; i++) {
+        boolean control = true;
+        for (int j = 0; j < array.length - 1 - i; j++) {
+            if (array[j] > array[j + 1]) {
+            int temp = array[j];
+            array[j] = array[j + 1];
+            array[j + 1] = temp;
+            control = false;
+            }
+        }
+        if (control) {
+        break;
         }
     }
-    if (control) {
-    break;
-    }
-}
-System.out.println(Arrays.toString(array));
+    System.out.println(Arrays.toString(array));
 ```
 
-* ### Selection sort
-* 
+* ### Selection sort - Complexity O(n²)
+```
+
+```

@@ -1,13 +1,13 @@
-public class Candidates{
+public class Candidate{
     private String name;
     private int votes;
 
-    public Candidates(String name){
+    public Candidate(String name){
         this.name = name;
         this.votes = 0;
     }
 
-    public void setVotes(int votes){
+    public void addVotes(int votes){
         this.votes += votes;
     }
     public int getVotes(){
@@ -17,17 +17,17 @@ public class Candidates{
         return this.name;
     }
 
-    public static boolean vote(Candidates[] list, String votedName) {
+    public static boolean vote(Candidate[] list, String votedName) {
         for (int i = 0; i < list.length; i++) {
             if (votedName.equalsIgnoreCase(list[i].getName())) {
-                list[i].setVotes(1);
+                list[i].addVotes(1);
                 return true;
             }
         }
         return false;
     }
 
-    public static Candidates[] orderByVotes(Candidates[] list){
+    public static Candidate[] orderByVotes(Candidate[] list){
         int listLength = list.length;
 
         for(int i = 0; i < listLength; i++){
@@ -39,7 +39,7 @@ public class Candidates{
                     maxNumberIndex = j;
                 }
             }
-            Candidates temp = list[maxNumberIndex];
+            Candidate temp = list[maxNumberIndex];
             list[maxNumberIndex] = list[i];
             list[i] = temp;
         }
@@ -47,13 +47,14 @@ public class Candidates{
         return list;
     }
 
-    public static void printWinner(Candidates[] list){
+    public static void printWinner(Candidate[] list){
 
         if (list == null || list.length == 0) {
             System.out.println("No candidates registered.");
+            return;
         }
 
-        Candidates winner = list[0];
+        Candidate winner = list[0];
 
         boolean tie = false;
 
@@ -71,7 +72,7 @@ public class Candidates{
         }
     }
 
-    public static void printRanking(Candidates[] list){
+    public static void printRanking(Candidate[] list){
 
         int rank = 1;
 

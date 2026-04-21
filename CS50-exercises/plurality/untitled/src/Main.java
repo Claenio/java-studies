@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Candidates[] candidatesList = {new Candidates("Alice"), new Candidates("Bob"), new Candidates("Charlie")};
+        Candidate[] candidatesList = {new Candidate("Alice"), new Candidate("Bob"), new Candidate("Charlie")};
         Scanner scan = new Scanner(System.in);
         int candidatesCount = candidatesList.length;
         int candidatesMax = 9;
@@ -17,19 +17,19 @@ public class Main {
                 System.out.print("Vote: ");
                 String voteName = scan.nextLine();
 
-                isValid = Candidates.vote(candidatesList, voteName);
+                isValid = Candidate.vote(candidatesList, voteName);
 
                 if(!isValid){
                     System.out.print("Invalid vote! Set a valid ");
                 }else {
-                    System.out.println("Sucess vote!\n");
+                    System.out.println("Successful vote!\n");
                 }
             }
 
         }
-        Candidates.orderByVotes(candidatesList);
-        Candidates.printWinner(candidatesList);
-        Candidates.printRanking(candidatesList);
+        Candidate.orderByVotes(candidatesList);
+        Candidate.printWinner(candidatesList);
+        Candidate.printRanking(candidatesList);
 
     }
 }

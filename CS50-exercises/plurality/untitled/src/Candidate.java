@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Candidate{
     private String name;
     private int votes;
@@ -17,49 +19,49 @@ public class Candidate{
         return this.name;
     }
 
-    public static boolean vote(Candidate[] list, String votedName) {
-        for (int i = 0; i < list.length; i++) {
-            if (votedName.equalsIgnoreCase(list[i].getName())) {
-                list[i].addVotes(1);
+    public static boolean vote(ArrayList<Candidate> list, String votedName) {
+        for (int i = 0; i < list.size(); i++) {
+            if (votedName.equalsIgnoreCase(list.get(i).getName())) {
+                list.get(i).addVotes(1);
                 return true;
             }
         }
         return false;
     }
 
-    public static Candidate[] orderByVotes(Candidate[] list){
-        int listLength = list.length;
+    public static ArrayList<Candidate> orderByVotes(ArrayList<Candidate> list){
+        int listLength = list.size();
 
         for(int i = 0; i < listLength; i++){
             int maxNumberIndex = i;
 
             for(int j = i+1; j < listLength; j++){
 
-                if(list[j].getVotes() > list[maxNumberIndex].getVotes()){
+                if(list.get(j).getVotes() > list.get(maxNumberIndex).getVotes()){
                     maxNumberIndex = j;
                 }
             }
-            Candidate temp = list[maxNumberIndex];
-            list[maxNumberIndex] = list[i];
-            list[i] = temp;
+            Candidate temp = list.get(maxNumberIndex);
+            list.set(maxNumberIndex, list.get(i));
+            list.set(i, temp);
         }
 
         return list;
     }
 
-    public static void printWinner(Candidate[] list){
+    public static void printWinner(ArrayList<Candidate> list){
 
-        if (list == null || list.length == 0) {
+        if (list == null || list.size() == 0) {
             System.out.println("No candidates registered.");
             return;
         }
 
-        Candidate winner = list[0];
+        Candidate winner = list.get(0);
 
         boolean tie = false;
 
-        if (list.length > 1) {
-            if (list[1].getVotes() == winner.getVotes() && winner.getVotes() > 0) {
+        if (list.size() > 1) {
+            if (list.get(1).getVotes() == winner.getVotes() && winner.getVotes() > 0) {
                 tie = true;
             }
         }
@@ -72,16 +74,16 @@ public class Candidate{
         }
     }
 
-    public static void printRanking(Candidate[] list){
+    public static void printRanking(ArrayList<Candidate> list){
 
         int rank = 1;
 
         System.out.println("\n --- RANKING ---");
-        for (int i = 0; i < list.length; i++) {
-            if (i > 0 && list[i].getVotes() < list[i - 1].getVotes()) {
+        for (int i = 0; i < list.size(); i++) {
+            if (i > 0 && list.get(i).getVotes() < list.get(i - 1).getVotes()) {
                 rank = i + 1;
             }
-            System.out.println(rank + "° " + list[i].getName() + " - " + list[i].getVotes() + " votes");
+            System.out.println(rank + "° " + list.get(i).getName() + " - " + list.get(i).getVotes() + " votes");
         }
     }
 

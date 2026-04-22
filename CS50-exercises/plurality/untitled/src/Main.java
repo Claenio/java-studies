@@ -1,11 +1,15 @@
 import java.util.Scanner;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Candidate[] candidatesList = {new Candidate("Alice"), new Candidate("Bob"), new Candidate("Charlie")};
+        //Candidate[] candidatesList = {new Candidate("Alice"), new Candidate("Bob"), new Candidate("Charlie")};
+
+        ArrayList<Candidate> candidatesList = new ArrayList<>();
+
+        candidatesList.add(new Candidate("Bob"));
         Scanner scan = new Scanner(System.in);
-        int candidatesCount = candidatesList.length;
+        int candidatesCount = candidatesList.size();
         int candidatesMax = 9;
         int voters = 4;
 

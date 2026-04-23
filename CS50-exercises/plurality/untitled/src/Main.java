@@ -28,7 +28,7 @@ public class Main {
                 System.out.print("Vote: ");
                 String voteName = scan.nextLine();
 
-                isValid = Candidate.vote(candidatesList, voteName);
+                isValid = Election.vote(candidatesList, voteName);
 
                 if(!isValid){
                     System.out.print("Invalid vote! Set a valid ");
@@ -38,9 +38,9 @@ public class Main {
             }
 
         }
-        Candidate.orderByVotes(candidatesList);
-        Candidate.printWinner(candidatesList);
-        Candidate.printRanking(candidatesList);
+        Election.orderByVotes(candidatesList);
+        Election.printWinner(candidatesList);
+        Election.printRanking(candidatesList);
 
     }
 }

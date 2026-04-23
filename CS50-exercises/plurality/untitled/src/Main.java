@@ -19,6 +19,20 @@ public class Main {
         }
         scan.nextLine();
 
+        while (candidatesList.size() < 9) {
+            System.out.print("Add a candidate or just press enter to finish: ");
+            String name = scan.nextLine();
+
+            if (name.trim().isEmpty()) {
+                if (candidatesList.size() < 2) {
+                    System.out.println("Invalid! You need at least 2 candidates.");
+                } else {
+                    break;
+                }
+            } else {
+                Election.addCandidate(candidatesList, name);
+            }
+        }
 
 
         for(int i = 0; i < voters; i++){

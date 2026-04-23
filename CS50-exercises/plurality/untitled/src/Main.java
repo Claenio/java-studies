@@ -5,7 +5,6 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Candidate> candidatesList = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
-        int candidatesCount = candidatesList.size();
 
         int voters;
         while(true){
@@ -45,7 +44,7 @@ public class Main {
                 isValid = Election.vote(candidatesList, voteName);
 
                 if(!isValid){
-                    System.out.print("Invalid vote! Set a valid ");
+                    System.out.println("Invalid vote! Set a valid candidate name.");
                 }else {
                     System.out.println("Successful vote!\n");
                 }
@@ -56,5 +55,6 @@ public class Main {
         Election.printWinner(candidatesList);
         Election.printRanking(candidatesList);
 
+        scan.close();
     }
 }

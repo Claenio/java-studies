@@ -19,6 +19,28 @@ public class Candidate{
         return this.name;
     }
 
+    public static boolean addCandidate(ArrayList<Candidate> list, String name) {
+        if (list.size() >= 9) {
+            System.out.println("Limit reached! You cannot add more than 9 candidates.");
+            return false;
+        }
+
+        if (name == null || name.trim().isEmpty()) {
+            return false;
+        }
+
+        for (Candidate c : list) {
+            if (c.getName().equalsIgnoreCase(name.trim())) {
+                System.out.println("Error: The candidate '" + name + "' is already registered!");
+                return false;
+            }
+        }
+
+        list.add(new Candidate(name));
+        return true;
+    }
+
+
     public static boolean vote(ArrayList<Candidate> list, String votedName) {
         for (int i = 0; i < list.size(); i++) {
             if (votedName.equalsIgnoreCase(list.get(i).getName())) {

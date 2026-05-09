@@ -8,7 +8,7 @@ public class BinarySearch {
         while(high >= low){
             int middle = (low + high)/2;
             if(array[middle] == myNum){
-                System.out.printf("Found number %d, at index %d.", myNum, middle);
+                System.out.printf("Found number %d at index %d.", myNum, middle);
                 break;
             } else if(array[middle] < myNum){
                 low = middle + 1;

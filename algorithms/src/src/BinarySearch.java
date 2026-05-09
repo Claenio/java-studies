@@ -19,7 +19,5 @@ public class BinarySearch {
         if(low > high){
             System.out.println("Number not found!");
         }
-
-
     }
 }

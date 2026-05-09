@@ -36,7 +36,29 @@ Ex: n = 3 -> 6 steps; n = 4 -> 24 steps; n = 5 -> 120 steps...
    ```
 
 * ### Binary search algorithm - complexity O(log n)
+Because it has a time complexity of O(log n), the binary search algorithm is highly efficient. For it to work, the list must be sorted. The algorithm works by repeatedly dividing the search range in half. Three indexes are used: start, middle, and end. The middle element is compared with the target value. If the target value is greater than the middle element, the search continues only in the right half of the list; if it is smaller, the search continues only in the left half. This process repeats until the element is found or until there is no search range left.
 
+```
+    int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int myNum = 3;
+    int low = 0;
+    int high = array.length - 1;
+
+    while(high >= low){
+        int middle = (low + high)/2;
+        if(array[middle] == myNum){
+            System.out.printf("Found number %d, at index %d.", myNum, middle);
+            break;
+        } else if(array[middle] < myNum){
+            low = middle + 1;
+        } else {
+            high = middle - 1;
+        }
+    }
+    if(low > high){
+        System.out.println("Number not found!");
+    }
+```
     
 # Sorting algorithms
    * ### Bubble sort - Complexity O(n²)

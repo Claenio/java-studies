@@ -21,7 +21,7 @@ Ex: n = 1 -> 2 steps; n = 2 -> 4 steps; n = 3 -> 8 steps...
 Ex: n = 3 -> 6 steps; n = 4 -> 24 steps; n = 5 -> 120 steps...
 ---
 
-# Searching algorithms
+## Searching algorithms
  * ### Linear search algorithm - Complexity O(n)
  The linear search algorithm is a search algorithm that finds a specific value in a list checking each element one by one.
  An example is:
@@ -60,7 +60,7 @@ Because it has a time complexity of O(log n), the binary search algorithm is hig
     }
 ```
     
-# Sorting algorithms
+## Sorting algorithms
    * ### Bubble sort - Complexity O(n²)
 Bubble Sort repeatedly scans the list, compares adjacent elements, and swaps them when needed, so that larger values gradually move to the end.
 Example:
@@ -103,3 +103,10 @@ Selection Sort repeatedly selects the smallest element from the unsorted part of
         }
         System.out.println(Arrays.toString(array));
 ```
+
+# DATA STRUCTURE
+
+* ### Arrays & LinkedList
+  **Arrays** have a fixed size. Once they are created, it is not possible to increase their size directly. If it becomes necessary to store more elements, it is usually required to create a new larger array and copy the old data into it.
+  One way to try to avoid this problem is to create an array larger than necessary, reserving extra memory space. However, this can lead to wasted memory if not all positions are used, or the reserved space may still not be enough.
+  To solve this problem, dynamic data structures such as **Linked Lists** were created. Unlike arrays, a Linked List does not need to reserve a continuous block of memory in advance. Each element in the list is stored in a separate node that contains the value of the element and a reference or memory address to the next node in the list.
